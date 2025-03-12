@@ -1,0 +1,43 @@
+// This is a sample program in our Duck language
+
+// Function definition
+function factorial(n) {
+    if (n < 0) {
+        return 0
+    }
+    if (n <= 1) {
+        return 1
+    }
+    result = 1
+    counter = n
+    while (counter > 1) {
+        result = result * counter
+        counter = counter - 1
+    }
+    return result
+}
+
+// Array operations
+numbers = [1, 2, 3, 4, 5]
+numbers[2] = 10
+
+// Variables and arithmetic
+x = 5
+y = 3
+sum = x + y
+
+// Control flow
+if (x > y) {
+    print("x is greater than y")
+} else {
+    print("x is not greater than y")
+}
+
+// Function call
+result = factorial(5)
+print("Factorial of 5 is:")
+print(result)
+
+// Array output
+print("Modified array:")
+print(numbers) 

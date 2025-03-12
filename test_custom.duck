@@ -1,0 +1,25 @@
+// Testing custom keywords
+define factorial(n) {
+    suppose (n <= 1) {
+        give 1;
+    }
+    give n * factorial(n - 1);
+}
+
+// Testing loop with custom keywords
+var x = 5;
+loop (x > 0) {
+    duck(x);
+    suppose (x == 3) {
+        skip;
+    }
+    suppose (x == 1) {
+        stop;
+    }
+    x = x - 1;
+}
+
+// Testing repeat (for) loop
+repeat (var i = 0; i < 3; i = i + 1) {
+    duck("Counter: " + i);
+} 

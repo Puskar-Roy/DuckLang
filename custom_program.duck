@@ -1,0 +1,47 @@
+# Function definition using 'def' instead of 'function'
+def factorial(n) {
+    # Using 'when' instead of 'if'
+    when n < 0 {
+        give 0
+    }
+    
+    when n <= 1 {
+        give 1
+    }
+    
+    let result = 1
+    let counter = n
+    
+    # Using 'repeat' instead of 'while'
+    repeat counter > 1 {
+        result = result * counter
+        counter = counter - 1
+    }
+    
+    give result
+}
+
+# Using 'let' instead of 'var'
+let numbers = [1, 2, 3, 4, 5]
+
+# Using 'show' instead of 'print'
+show "Testing custom keywords!"
+
+# Using 'when/otherwise' instead of 'if/else'
+when 5 > 3 {
+    show "5 is greater than 3"
+} otherwise {
+    show "This won't be shown"
+}
+
+# Test logical operators
+let x = yes  # Using 'yes' instead of 'true'
+let y = no   # Using 'no' instead of 'false'
+
+when x also negate y {  # Using 'also' instead of 'and', 'negate' instead of 'not'
+    show "Logic works!"
+}
+
+show "Factorial of 5 is:"
+let result = factorial(5)
+show result 

@@ -23,7 +23,17 @@ class OperatorHandler(TokenHandler):
         "&&": TokenType.AND,
         "||": TokenType.OR,
         "!": TokenType.NOT,
-        "->": TokenType.ARROW
+        "->": TokenType.ARROW,
+        ",": TokenType.COMMA,
+        ".": TokenType.DOT,
+        ":": TokenType.COLON,
+        ";": TokenType.SEMICOLON,
+        "(": TokenType.LEFT_PAREN,
+        ")": TokenType.RIGHT_PAREN,
+        "{": TokenType.LEFT_BRACE,
+        "}": TokenType.RIGHT_BRACE,
+        "[": TokenType.LEFT_BRACKET,
+        "]": TokenType.RIGHT_BRACKET
     }
 
     def can_handle(self, state):

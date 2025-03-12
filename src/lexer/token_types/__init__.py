@@ -4,6 +4,7 @@ class TokenType(Enum):
     # Commands
     PRINT_COMMAND = "PRINT_COMMAND"
     VARIABLE_DECLARE = "VARIABLE_DECLARE"
+    FUNCTION = "FUNCTION"
 
     # Basic Data Types
     IDENTIFIER = "IDENTIFIER"
@@ -65,14 +66,16 @@ class TokenType(Enum):
     ASSIGN = "ASSIGN"
     ARROW = "ARROW"
     WHITESPACE = "WHITESPACE"
+    NEWLINE = "NEWLINE"  
 
 class Position:
-    def __init__(self, line, column):
+    def __init__(self, line, column, index=0):
         self.line = line
         self.column = column
+        self.index = index
     
     def copy(self):
-        return Position(self.line, self.column)
+        return Position(self.line, self.column, self.index)
     
     def __str__(self):
         return f"line {self.line}, column {self.column}"
@@ -83,7 +86,10 @@ class Token:
         self.value = value
         self.start_pos = start_pos
         self.end_pos = end_pos
-        self.raw = raw if raw is not None else value
+        self.raw = raw if raw is not None else str(value)
 
     def __repr__(self):
-        return f"Token({self.token_type}, {self.value}, {self.start_pos}, {self.end_pos})"
+        return f"Token({self.token_type}, {repr(self.value)}, {self.start_pos}, {self.end_pos})"
+
+    def __str__(self):
+        return f"{self.token_type}({repr(self.value)})"

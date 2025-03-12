@@ -1,0 +1,29 @@
+# Syntax Error Test
+def test1() {
+    x = 5 + # Missing operand
+}
+
+# Undefined Variable Error
+def test2() {
+    show(undefinedVariable)
+}
+
+# Type Mismatch Error
+def test3() {
+    let x = "hello"
+    let y = x + 5
+}
+
+# Division by Zero Error
+def test4() {
+    let x = 10
+    let y = x / 0
+}
+
+# Missing Bracket Error
+def test5() {
+    let x = 5
+    when x > 0 {
+        show("Missing closing bracket")
+    }
+} 
