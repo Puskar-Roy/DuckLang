@@ -17,13 +17,16 @@ tokens = lexer.tokenize(source_code)
 
 # Print detailed token information
 print("\n📝 Token Details:")
-for token in tokens:
-    print(f"🔹 {token}")
+if not tokens:
+    print("⚠️ No tokens found! Check the lexer implementation or input source code.")
+else:
+    for token in tokens:
+        print(f"🔹 {token}")
 
 # Print a nicely formatted table
 print("\n📌 Token Table:")
 
-# Define column widths
+# Define column widthsa
 col_widths = [30, 12, 14, 12, 6, 8]
 line_sep = "+" + "+".join(["-" * w for w in col_widths]) + "+"
 
